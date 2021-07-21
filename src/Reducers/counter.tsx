@@ -1,6 +1,6 @@
 import { DefaultRootState } from "react-redux";
 
-const counterReducer = (state = 0, action: { type: DefaultRootState; }) => {
+const counterReducer = (state = 0, action) => {
     switch(action.type){
         case 'INCREMENT':
         return state + 1;
