@@ -1,10 +1,15 @@
-const counterReducer = (state=0, action) => {
+import { DefaultRootState } from "react-redux";
+
+const counterReducer = (state = 0, action: { type: DefaultRootState; }) => {
     switch(action.type){
         case 'INCREMENT':
-        return state + 1
+        return state + 1;
         case 'DECREMENT':
-        return state - 1
+        return state - 1;
+        default:
+            return state;
 
     }
-}
+};
+
 export default counterReducer;

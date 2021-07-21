@@ -1,13 +1,17 @@
 import React from 'react';
-import logo from './logo.svg';
-import { useSelector } from 'react-redux';
+
+import { useSelector, useDispatch } from 'react-redux';
 import { increment } from './Actions';
+import counterReducer from './Reducers/counter';
 
 function App() {
-  const counter = useSelector(state => state.counter)
+  const counters = useSelector(state => state.counterReducer);
+  const dispatch = useDispatch();
   return (
     <div className="App">
-      <h1>counter = {counter}</h1>
+      <h1>Counter = {counters}</h1>
+      <button onClick={() => dispatch(increment())}>+</button>
+      <button>-</button>
     </div>
   );
 }
