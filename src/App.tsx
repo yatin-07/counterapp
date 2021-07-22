@@ -1,17 +1,19 @@
 import React from 'react';
-
+import { DefaultRootState } from "react-redux";
 import { useSelector, useDispatch } from 'react-redux';
-import { increment } from './Actions';
-import counterReducer from './Reducers/counter';
+import { increment, decrement } from './Actions';
+import { initialStateType } from './Reducers/counter';
 
 function App() {
-  const counters = useSelector(state => state.counterReducer);
+  const incCounters = useSelector((state: initialStateType) => state.inc);
   const dispatch = useDispatch();
+  //console.log(DefaultRootState);
   return (
     <div className="App">
-      <h1>Counter = {counters}</h1>
+      <h1>Counter = {incCounters}</h1>
       <button onClick={() => dispatch(increment())}>+</button>
-      <button>-</button>
+      <button onClick={() => dispatch(decrement())}>-</button>
+      
     </div>
   );
 }

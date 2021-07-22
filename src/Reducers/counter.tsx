@@ -1,11 +1,27 @@
 import { DefaultRootState } from "react-redux";
+export type initialStateType= {
+    inc: number;
+    dec: number;
+}
 
-const counterReducer = (state = 0, action) => {
+const initialStatetype: initialStateType ={
+    inc: 0,
+    dec:0
+}
+const counterReducer = (state = initialStatetype, action: any ) => {
     switch(action.type){
         case 'INCREMENT':
-        return state + 1;
+        return {
+            ...state,
+            inc: state.inc+1,
+        }
+        
         case 'DECREMENT':
-        return state - 1;
+        return {
+            ...state,
+            inc: state.inc-1,
+        }
+       
         default:
             return state;
 
