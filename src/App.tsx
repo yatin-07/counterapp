@@ -1,5 +1,5 @@
 import React from 'react';
-import { DefaultRootState } from "react-redux";
+//import { DefaultRootState } from "react-redux";
 import { useSelector, useDispatch } from 'react-redux';
 import { increment, decrement } from './Actions';
 import { initialStateType } from './Reducers/counter';
@@ -16,25 +16,25 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-      <h1>Simple Redux Counter</h1>
-      <h1>Counter = {incCounters}</h1>
-      <div>
-      <Button className="button"
-      onClick={() => dispatch(increment())} 
-      startIcon={<AddIcon/>}
-      size = "large"
-      variant="contained"
-      color="primary"
-      ></Button>
-      <Button className="button" 
-      onClick={() => dispatch(decrement())}
-      startIcon={<RemoveIcon/>}
-      size = "large"
-      variant="contained"
-      color="primary">
-      </Button>
-      </div>
-     
+        <h1>Simple Redux Counter</h1>
+        <h1>Counter = {incCounters}</h1>
+        <div>
+          <Button className="button"
+            onClick={() => dispatch(increment())} 
+            startIcon={<AddIcon/>}
+            size = "large"
+            variant="contained"
+            color="primary"
+          >
+          </Button>
+          <Button className="button" 
+            onClick={() => dispatch(decrement())}
+            startIcon={<RemoveIcon/>}
+            size = "large"
+            variant="contained"
+            color="primary">
+          </Button>
+        </div>
       </header>
     </div>
   );

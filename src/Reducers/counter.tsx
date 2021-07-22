@@ -1,4 +1,4 @@
-import { DefaultRootState } from "react-redux";
+//import { DefaultRootState } from "react-redux";
 export type initialStateType= {
     inc: number;
     dec: number;
